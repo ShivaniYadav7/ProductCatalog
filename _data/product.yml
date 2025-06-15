@@ -1,0 +1,26 @@
+- id: 1
+  name: Bluetooth Speaker
+  category: Audio
+  price: 1499
+  available: true
+  image: speaker.jpeg
+  rating: 4.5
+  tags: ["Bluetooth", "Portable"]
+
+- id: 2
+  name: Smartwatch Pro X
+  category: Wearable
+  price: 4999
+  available: true
+  image: smartwatch.jpeg
+  rating: 4.0
+  tags: ["Fitness", "Health", "Bluetooth"]
+
+- id: 3
+  name: Wireless Headphones
+  category: Audio
+  price: 2299
+  available: false
+  image: headphone.jpeg
+  rating: 3.8
+  tags: ["Wireless", "Comfort", "Noise Cancelling"]
