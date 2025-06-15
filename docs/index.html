@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog</title>
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+  </head>
+  <body>
+    <div class="container"><h1>Product Catalog</h1>
+
+<div class="nav-bar">
+  <input type="text" id="search" class="search-bar" placeholder="Search products..." />
+</div>
+
+<div class="catalog">
+  <label class="stock-filter-label">
+    <input type="checkbox" id="stockFilter" />
+    Show only in-stock products
+  </label>
+
+  <div class="product-grid">
+    
+      <div class="product">
+        <img class="product-image" src="/assets/images/speaker.jpeg" alt="Bluetooth Speaker" />
+        <h2>Bluetooth Speaker</h2>
+        <p>Category: Audio</p>
+        <p>Price: ₹1499</p>
+        <p class="status in-stock">
+          In Stock
+        </p>
+
+        <p>
+          Rating:
+          
+          
+          ★★★★
+          ½
+          (4.5/5)
+        </p>
+
+        <p class="tags">
+          
+            <span class="tag">Bluetooth</span>
+          
+            <span class="tag">Portable</span>
+          
+        </p>
+
+        <button class="buy-button" onclick="alert('Buying Bluetooth Speaker')">Buy Now</button>
+      </div>
+    
+      <div class="product">
+        <img class="product-image" src="/assets/images/smartwatch.jpeg" alt="Smartwatch Pro X" />
+        <h2>Smartwatch Pro X</h2>
+        <p>Category: Wearable</p>
+        <p>Price: ₹4999</p>
+        <p class="status in-stock">
+          In Stock
+        </p>
+
+        <p>
+          Rating:
+          
+          
+          ★★★★
+          
+          (4.0/5)
+        </p>
+
+        <p class="tags">
+          
+            <span class="tag">Fitness</span>
+          
+            <span class="tag">Health</span>
+          
+            <span class="tag">Bluetooth</span>
+          
+        </p>
+
+        <button class="buy-button" onclick="alert('Buying Smartwatch Pro X')">Buy Now</button>
+      </div>
+    
+      <div class="product">
+        <img class="product-image" src="/assets/images/headphone.jpeg" alt="Wireless Headphones" />
+        <h2>Wireless Headphones</h2>
+        <p>Category: Audio</p>
+        <p>Price: ₹2299</p>
+        <p class="status out-stock">
+          Out of Stock
+        </p>
+
+        <p>
+          Rating:
+          
+          
+          ★★★
+          ½
+          (3.8/5)
+        </p>
+
+        <p class="tags">
+          
+            <span class="tag">Wireless</span>
+          
+            <span class="tag">Comfort</span>
+          
+            <span class="tag">Noise Cancelling</span>
+          
+        </p>
+
+        <button class="buy-button" onclick="alert('Buying Wireless Headphones')">Buy Now</button>
+      </div>
+    
+
+  </div> <!-- .product-grid -->
+</div>
+<p><!-- .catalog --></p>
+
+<script>
+  document.getElementById("search").addEventListener("input", function () {
+    const term = this.value.toLowerCase();
+    document.querySelectorAll(".product").forEach(function (product) {
+      const name = product.querySelector("h2").textContent.toLowerCase();
+      const category = product.querySelector("p").textContent.toLowerCase();
+      product.style.display =
+        name.includes(term) || category.includes(term) ? "" : "none";
+    });
+  });
+
+  document.getElementById("stockFilter").addEventListener("change", function () {
+    const showOnlyInStock = this.checked;
+    document.querySelectorAll(".product").forEach(product => {
+      const status = product.querySelector(".status").textContent.toLowerCase();
+      product.style.display = !showOnlyInStock || status.includes("in stock") ? "" : "none";
+    });
+  });
+</script>
+
+</div>
+  </body>
+</html>
